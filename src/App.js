@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect} from "react";
+import { Header } from './Header'
+import { Main } from  './Main'
+import { Footer} from "./Footer";
+
+const skills = ['Python', 'PHP', 'Javascript', 'CSS', 'HTML', 'Bash'];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <Header />
+      <Main skills={skills} login={'JuliRash'}/>
+      <Footer year={new Date().getFullYear()} />
     </div>
   );
 }
